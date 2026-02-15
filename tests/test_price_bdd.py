@@ -2,7 +2,6 @@ import pytest
 from pytest_bdd import scenarios, given, when, then, parsers
 from calculator.price import apply_discount, add_vat
 
-#Link feature file
 scenarios("features/price.feature")
 
 
@@ -21,7 +20,7 @@ def apply_discount_step(context, discount):
     try:
         context["result"] = apply_discount(context["price"], discount)
     except Exception as e:
-        context["error"] = e    
+        context["error"] = e
 
 
 @when(parsers.parse("I add VAT of {vat:d} percent"))
@@ -32,8 +31,9 @@ def add_vat_step(context, vat):
         context["error"] = e
 
 
-@then(parsers.parse("the final price should be {expected: d}"))
+@then(parsers.parse("the final price should be {expected:d}"))
 def check_result(context, expected):
+    import pytest
     assert context["result"] == pytest.approx(expected)
 
 
