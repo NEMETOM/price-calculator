@@ -22,6 +22,7 @@ Feature: Price calculations
             | price | vat | expected |
             | 100   | 20  | 120      |
             | 50    | 10  | 55       |
+            | 20    | 10  | 22       |
 
 
     Scenario: Reject negative price
