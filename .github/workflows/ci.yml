@@ -56,7 +56,7 @@ jobs:
         run: |
           pytest tests/test_price_bdd.py \
             --html=report.html \
-            --self-contained-html
+            --self-contained-html \
             --log-cli-level=DEBUG
 
       - name: Upload HTML report
