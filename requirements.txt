@@ -1,1 +1,4 @@
 pytest
+pytest-bdd
+pytest-cov
+pytest-html
